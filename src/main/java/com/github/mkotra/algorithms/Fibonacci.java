@@ -3,6 +3,10 @@ package com.github.mkotra.algorithms;
 public class Fibonacci {
 
     public static void main(String[] args) {
+        for (long i = 0; i < 10; i++) {
+            System.out.println("N " + i + " fibo " + fibo(i));
+        }
+
         for (long i = 0; i < 50; i++) {
             System.out.println("N " + i + " fibo " + fibo2(i));
         }
