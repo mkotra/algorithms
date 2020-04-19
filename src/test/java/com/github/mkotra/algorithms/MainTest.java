@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class MainTest {
 
     @Test
-    public void check() {
+    public void dummyTest() {
         Assertions.assertEquals(10, 10);
     }
 }
