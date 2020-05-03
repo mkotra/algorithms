@@ -1,6 +1,6 @@
 package com.github.mkotra.algorithms;
 
-public class Fibonacci {
+class Fibonacci {
 
     public static void main(String[] args) {
         for (long i = 0; i < 10; i++) {

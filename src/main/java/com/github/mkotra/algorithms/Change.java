@@ -2,7 +2,7 @@ package com.github.mkotra.algorithms;
 
 import java.util.*;
 
-public class Change {
+class Change {
 
     private static final Map<Integer, Integer> CASH = new LinkedHashMap<>();
     static {
