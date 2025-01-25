@@ -7,9 +7,9 @@ public class Palindrome {
         String test2 = "hello";
         String test3 = "racecar";
 
-        System.out.println("Test 1: \"" + test1 + "\" is a palindrome: " + isPalindrome(test1)); // Expected: true
-        System.out.println("Test 2: \"" + test2 + "\" is a palindrome: " + isPalindrome(test2)); // Expected: false
-        System.out.println("Test 3: \"" + test3 + "\" is a palindrome: " + isPalindrome(test3)); // Expected: true
+        System.out.println("Test 1: '" + test1 + "' is a palindrome: " + isPalindrome(test1)); // Expected: true
+        System.out.println("Test 2: '" + test2 + "' is a palindrome: " + isPalindrome(test2)); // Expected: false
+        System.out.println("Test 3: '" + test3 + "' is a palindrome: " + isPalindrome(test3)); // Expected: true
     }
 
     // Method to check if a string is a palindrome
@@ -32,6 +32,4 @@ public class Palindrome {
         // If all characters matched, it's a palindrome
         return true;
     }
-
-
 }
