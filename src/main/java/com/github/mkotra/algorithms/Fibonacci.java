@@ -4,24 +4,22 @@ class Fibonacci {
 
     public static void main(String[] args) {
         for (long i = 0; i < 10; i++) {
-            System.out.println("N " + i + " fibo " + fibo(i));
+            System.out.println("N " + i + " fibo " + fiboRecursion(i));
         }
 
         for (long i = 0; i < 50; i++) {
-            System.out.println("N " + i + " fibo " + fibo2(i));
+            System.out.println("N " + i + " fibo " + fiboIterative(i));
         }
     }
 
-    //recursion
-    public static long fibo(long n) {
+    public static long fiboRecursion(long n) {
         if (n <= 1) {
             return n;
         }
-        return fibo(n - 2) + fibo(n - 1);
+        return fiboRecursion(n - 2) + fiboRecursion(n - 1);
     }
 
-    //without recursion
-    public static long fibo2(long n) {
+    public static long fiboIterative(long n) {
         if (n <= 1) {
             return n;
         }
