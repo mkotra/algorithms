@@ -36,9 +36,36 @@ public class Knapsack {
                     dp[i][w] = dp[i - 1][w];  // Item i can't be included
                 }
             }
+
+            // Draw the table after each item is processed
+            drawTable(dp, i, weights, values, capacity);
         }
 
         // The maximum value that can be obtained is in dp[n][capacity]
         return dp[n][capacity];
+    }
+
+    // Method to draw the DP table after each iteration
+    public static void drawTable(int[][] dp, int currentItem, int[] weights, int[] values, int capacity) {
+        System.out.println("DP Table after processing item " + currentItem +
+                (currentItem > 0 ? " (Weight: " + weights[currentItem - 1] +
+                        ", Value: " + values[currentItem - 1] + ")" : "") + ":");
+
+        // Print column headers (capacities)
+        System.out.print("    ");
+        for (int w = 0; w <= capacity; w++) {
+            System.out.printf("%4d", w);
+        }
+        System.out.println();
+
+        // Print the table rows
+        for (int i = 0; i < dp.length; i++) {
+            System.out.printf("I%-3d", i); // Row labels (items)
+            for (int w = 0; w <= capacity; w++) {
+                System.out.printf("%4d", dp[i][w]);
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }
