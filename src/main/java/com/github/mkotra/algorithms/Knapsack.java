@@ -26,14 +26,23 @@ public class Knapsack {
         // Building the dp table
         for (int i = 0; i <= n; i++) {
             for (int w = 0; w <= capacity; w++) {
+
                 if (i == 0 || w == 0) {
-                    dp[i][w] = 0;  // Base case: no items or no capacity
-                } else if (weights[i - 1] <= w) {
-                    // If including the item i does not exceed the capacity
-                    dp[i][w] = Math.max(dp[i - 1][w],
-                            dp[i - 1][w - weights[i - 1]] + values[i - 1]);
+                    dp[i][w] = 0; // Base case: no items or no capacity
+                    continue;
+                }
+
+                int itemWeight = weights[i - 1];
+                int itemValue = values[i - 1];
+
+                boolean canIncludeItem = (itemWeight <= w);
+
+                if (canIncludeItem) {
+                    int excludeItem = dp[i - 1][w]; // Value if item is excluded
+                    int includeItem = dp[i - 1][w - itemWeight] + itemValue; // Value if item is included
+                    dp[i][w] = Math.max(excludeItem, includeItem);
                 } else {
-                    dp[i][w] = dp[i - 1][w];  // Item i can't be included
+                    dp[i][w] = dp[i - 1][w]; // Item can't be included
                 }
             }
 
